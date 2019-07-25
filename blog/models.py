@@ -6,7 +6,7 @@ class Post(models.Model):
    
     name = models.CharField(max_length = 100)
     description = models.TextField(default = '')
-    link = models.CharField(max_length = 100,default = '')
+    link = models.CharField(max_length = 100,default = '',null= True,blank = True)
 
     def __str__(self):
         return str(self.name)

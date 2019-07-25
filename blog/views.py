@@ -43,6 +43,12 @@ def TaskPage(request):
     posts= Post.objects.all()
     return render(request,'blog/talk-schedule.html',{ 'posts':posts})
 
+def ConferencePage(request):
+    return render(request,'blog/conference.html',{})
+
+def PosterPage(request):
+    return render(request,'blog/poster.html',{})
+
 
 
 

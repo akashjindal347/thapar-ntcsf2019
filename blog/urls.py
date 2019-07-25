@@ -1,6 +1,6 @@
 
 from django.urls import path,include
-from .views import PostCreateView,PostDeleteView,PostUpdateView,HomePage,RegistrationPage,TravelPage,TaskPage
+from .views import PostCreateView,PostDeleteView,PostUpdateView,HomePage,RegistrationPage,TravelPage,TaskPage,ConferencePage,PosterPage
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
@@ -13,6 +13,8 @@ urlpatterns = [
       path('registration/',RegistrationPage, name = 'registration'),
       path('travel-and-accomodation',TravelPage, name = 'travel'),
       path('delete/<int:id>',PostDeleteView, name = 'delete-Post'),
+      path('conference-preceedings/',ConferencePage,name = 'conference'),
+      path('poster',PosterPage,name ='poster'),
 
     
 
