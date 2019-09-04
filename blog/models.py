@@ -31,7 +31,7 @@ class ImportantDate(models.Model):
 
     description = models.TextField(default = '')
     date = models.TextField(default = '')
-    highlighted = models.TextField(default = '')
+    highlighted = models.TextField(default = '', null=True)
     
     def __str__(self):
         return str(self.date)
