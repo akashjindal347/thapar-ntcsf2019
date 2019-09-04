@@ -52,7 +52,7 @@ class ContactUpdateView(UpdateView):
 class RContactUpdateView(UpdateView):
     model = RegistrationContact
     template_name = "blog/updatepost.html"
-    fields = ['description', 'link', 'highlights']
+    fields = ['description', 'link', 'highlight']
     success_url = "/registration/"
 	
     def form_valid(self, form):
@@ -61,13 +61,13 @@ class RContactUpdateView(UpdateView):
 class AnnouncementsDeleteView(DeleteView):
 	model = Announcement
 	template_name = "blog/deleteview.html"
-	success_url = "/registration/"
+	success_url = "/"
 
 class AnnouncementsCreateView(CreateView):
     model = Announcement
     template_name = "blog/createpost.html"
-    fields = ['description', 'link', 'highlights']
-    success_url = "/registration/"
+    fields = ['title', 'description', 'highlights']
+    success_url = "/"
 
     def form_valid(self, form):
         return super().form_valid(form)
@@ -75,8 +75,8 @@ class AnnouncementsCreateView(CreateView):
 class AnnouncementsUpdateView(UpdateView):
     model = Announcement
     template_name = "blog/updatepost.html"
-    fields = ['description', 'link', 'highlights']
-    success_url = "/travel-and-accomodation/"
+    fields = ['title', 'description', 'highlights']
+    success_url = "/"
 	
     def form_valid(self, form):
 	    return super().form_valid(form)
@@ -84,7 +84,7 @@ class AnnouncementsUpdateView(UpdateView):
 class AccomodationUpdateView(UpdateView):
     model = AccomodationAndTravel
     template_name = "blog/updatepost.html"
-    fields = ['description']
+    fields = ['description', 'link']
     success_url = "/travel-and-accomodation"
 	
     def form_valid(self, form):
