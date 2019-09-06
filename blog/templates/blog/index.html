@@ -29,7 +29,7 @@
         text-align: center; 
         font-weight: 800;
         transition: ease-in-out 0.5s;
-        color: rgb(212, 211, 211);
+        color: rgb(175, 22, 22);
     }
     .register:hover{
         text-decoration: underline;
@@ -93,6 +93,9 @@
                 </li>
                 <li>
                     <a href="#" class="download" style="margin-top: -15px;color: rgb(175, 22, 22);">11-12 October, 2019</a>
+                </li>
+                <li>
+                    <a href="#" class="download" style="margin-top: -15px;color: rgb(175, 22, 22); font-size: 21px; font-weight: 700">School of Applied Mathematics</a>
                 </li>
                 
             </ul>
@@ -176,8 +179,8 @@
                                         <a href="{% url 'add-announcement' %}" style="background-color: rgb(138, 13, 13);  border: none; border-radius:0;font-size: 14px; margin-bottom: 10px; margin-top: 5px;" class="btn btn-primary">Add Announcement</a>
                                         {% endif %}
                                         {% for an in announce %}
-                                        <h5 class="card-title">{{an.title}}</h5>
-                                        <p style="font-size: 80%; color: black; margin-bottom: 0; " >{{an.description}} <span style="font-weight: 500; color: red">{{an.highlights}}</span></p>
+                                        <h5 class="card-title" style="margin-top: 20px">{{an.title}}</h5>
+                                        <p style="font-size: 80%; color: black; margin-bottom: 0; " >{{an.description}} <br><span style="font-weight: 500; color: red">{{an.highlights}}</span></p>
                                         {% if user.is_authenticated %}
                                            <a href="{% url 'update-announcement' an.id %}" style="background-color: rgb(138, 13, 13); border: none; border-radius:0;font-size: 10px; margin-bottom: 10px; margin-top: 5px;" class="btn btn-primary">Edit</a>
                                            <a href="{% url 'delete-announcement' an.id %}" style="background-color: rgb(138, 13, 13);  border: none; border-radius:0;font-size: 10px; margin-bottom: 10px; margin-top: 5px;" class="btn btn-primary">Delete</a>
@@ -217,7 +220,7 @@
 
                                 <div class="card" style=" margin-left: 30px; margin-bottom: 30px; margin-right: 30px;  border-radius: 5px;  background: transparent; border: 1px solid rgba(163, 163, 163, 0.274); ">
                                         <div class="card-body">
-                                                <h5 class="card-title">Organiser Committee</h5>
+                                                <h5 class="card-title">Organising Committee</h5>
                                                 {% if user.is_authenticated %}
                                                 <a href="{% url 'new-organiser' %}" style="background-color: rgb(138, 13, 13); border: none; border-radius:0;font-size: 10px; margin-bottom: 10px; margin-top: 5px;" class="btn btn-primary">Add</a>
                                                 {% endif %}

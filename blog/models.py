@@ -61,15 +61,16 @@ class RegistrationContact(models.Model):
 
     description = models.TextField(default = '')
     link = models.CharField(max_length = 100,default = '',null= True,blank = True)
+    highlight = models.TextField(default = '', null=True, blank = True)
 
     def __str__(self):
         return str(self.description)
 
 class Announcement(models.Model):
 
-    description = models.TextField(default = '')
-    title = models.CharField(max_length = 100,default = '')
-    highlights = models.TextField(default = '')
+    description = models.TextField(default = '', null=True, blank=True)
+    title = models.CharField(max_length = 100,default = '', null=True, blank=True)
+    highlights = models.TextField(default = '', null=True, blank=True)
 
     def __str__(self):
         return str(self.title)
@@ -91,6 +92,7 @@ class RegistrationFee(models.Model):
 class AccomodationAndTravel(models.Model):
 
     description = models.TextField(default = '')
+    link = models.CharField(max_length = 100,default = '',null= True,blank = True)
 
     def __str__(self):
         return str(self.description)
