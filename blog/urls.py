@@ -1,6 +1,6 @@
 
 from django.urls import path,include
-from .views import PostCreateView,PostDeleteView,PostUpdateView,FeesDeleteView,FeesCreateView,FeesUpdateView,AnnouncementsUpdateView,AnnouncementsCreateView,AnnouncementsDeleteView,HomePage,RegistrationPage,TravelPage,BankDeleteView, BankCreateView, BankUpdateView,TaskPage,ConferencePage,PosterPage,AccomodationUpdateView,RContactUpdateView,OrganisersCreateView,OrganisersDeleteView,OrganisersUpdateView, AboutUpdateView,ContactUpdateView, PapersUpdateView, DatesUpdateView, DatesDeleteView, DatesCreateView, SpeakersCreateView, SpeakersUpdateView, SpeakersDeleteView
+from .views import PostCreateView,PostDeleteView,PostUpdateView,FeesDeleteView,FeesCreateView,FeesUpdateView,AnnouncementsUpdateView,AnnouncementsCreateView,AnnouncementsDeleteView,HomePage,RegistrationPage,TravelPage,BankDeleteView, BankCreateView, BankUpdateView,TaskPage,ConferencePage,PosterPage,AccomodationUpdateView,RContactUpdateView,OrganisersCreateView,OrganisersDeleteView,OrganisersUpdateView, AboutUpdateView,ContactUpdateView, PapersUpdateView, DatesUpdateView, DatesDeleteView, DatesCreateView, SpeakersCreateView, SpeakersUpdateView, SpeakersDeleteView,ChiefPatronCreateView,ChiefPatronDeleteView,ChiefPatronUpdateView,PatronCreateView,PatronDeleteView,PatronUpdateView,HeadCreateView,HeadDeleteView,HeadUpdateView,ConvenorCreateView,ConvenorDeleteView,ConvenorUpdateView
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
@@ -38,4 +38,20 @@ urlpatterns = [
    path('delete/fee-details/<int:pk>',FeesDeleteView.as_view(), name = 'delete-fees'),
    path('new/fee-details/',FeesCreateView.as_view(), name = 'new-fees'),
    path('edit/fee-details/<int:pk>',FeesUpdateView.as_view(), name = 'update-fees'),
+
+   path('edit/chief-patron/<int:pk>',ChiefPatronUpdateView.as_view(), name = 'update-chief-patron'),
+   path('delete/chief-patron/<int:pk>',ChiefPatronDeleteView.as_view(), name = 'delete-chief-patron'),
+   path('create/chief-patron/',ChiefPatronCreateView.as_view(), name = 'new-chief-patron'),
+
+   path('edit/patron/<int:pk>',PatronUpdateView.as_view(), name = 'update-patron'),
+   path('delete/patron/<int:pk>',PatronDeleteView.as_view(), name = 'delete-patron'),
+   path('create/patron/',PatronCreateView.as_view(), name = 'new-patron'),
+
+   path('edit/head/<int:pk>',HeadUpdateView.as_view(), name = 'update-head'),
+   path('delete/head/<int:pk>',HeadDeleteView.as_view(), name = 'delete-head'),
+   path('create/head/',HeadCreateView.as_view(), name = 'new-head'),
+
+   path('edit/convenor/<int:pk>',ConvenorUpdateView.as_view(), name = 'update-convenor'),
+   path('delete/convenor/<int:pk>',ConvenorDeleteView.as_view(), name = 'delete-convenor'),
+   path('create/convenor/',ConvenorCreateView.as_view(), name = 'new-convenor'),
 ]

@@ -221,6 +221,89 @@
                                 <div class="card" style=" margin-left: 30px; margin-bottom: 30px; margin-right: 30px;  border-radius: 5px;  background: transparent; border: 1px solid rgba(163, 163, 163, 0.274); ">
                                         <div class="card-body">
                                                 <h5 class="card-title">Organising Committee</h5>
+
+                                                <h5 class="card-title">Chief Patron</h5>
+                                                {% if user.is_authenticated %}
+                                                <a href="{% url 'new-chief-patron' %}" style="background-color: rgb(138, 13, 13); border: none; border-radius:0;font-size: 10px; margin-bottom: 10px; margin-top: 5px;" class="btn btn-primary">Add</a>
+                                                {% endif %}
+                                         <ul>
+                                             {% for organiser in chiefpatron %}
+                                             <li style="font-size: 85%;">
+                                                    {{organiser.name}}
+                                                </li>
+                                                    {% if user.is_authenticated %}
+
+                                                        <a href="{% url 'update-chief-patron' organiser.id %}" style="background-color: rgb(138, 13, 13); border: none; border-radius:0;font-size: 10px; margin-bottom: 10px; margin-top: 5px;" class="btn btn-primary">Edit</a>
+                                                        <a href="{% url 'delete-chief-patron' organiser.id %}" style="background-color: rgb(138, 13, 13);  border: none; border-radius:0;font-size: 10px; margin-bottom: 10px; margin-top: 5px;" class="btn btn-primary">Delete</a>
+                                                   
+                                                    {% endif %}
+                                             
+                                             {% endfor %}
+                                             
+                                         </ul>
+
+                                         <h5 class="card-title"> Patron</h5>
+                                                {% if user.is_authenticated %}
+                                                <a href="{% url 'new-patron' %}" style="background-color: rgb(138, 13, 13); border: none; border-radius:0;font-size: 10px; margin-bottom: 10px; margin-top: 5px;" class="btn btn-primary">Add</a>
+                                                {% endif %}
+                                         <ul>
+                                             {% for organiser in patron %}
+                                             <li style="font-size: 85%;">
+                                                    {{organiser.name}}
+                                                </li>
+                                                    {% if user.is_authenticated %}
+
+                                                        <a href="{% url 'update-patron' organiser.id %}" style="background-color: rgb(138, 13, 13); border: none; border-radius:0;font-size: 10px; margin-bottom: 10px; margin-top: 5px;" class="btn btn-primary">Edit</a>
+                                                        <a href="{% url 'delete-patron' organiser.id %}" style="background-color: rgb(138, 13, 13);  border: none; border-radius:0;font-size: 10px; margin-bottom: 10px; margin-top: 5px;" class="btn btn-primary">Delete</a>
+                                                   
+                                                    {% endif %}
+                                             
+                                             {% endfor %}
+                                             
+                                         </ul>
+
+
+                                         <h5 class="card-title">Head</h5>
+                                                {% if user.is_authenticated %}
+                                                <a href="{% url 'new-head' %}" style="background-color: rgb(138, 13, 13); border: none; border-radius:0;font-size: 10px; margin-bottom: 10px; margin-top: 5px;" class="btn btn-primary">Add</a>
+                                                {% endif %}
+                                         <ul>
+                                             {% for organiser in heads %}
+                                             <li style="font-size: 85%;">
+                                                    {{organiser.name}}
+                                                </li>
+                                                    {% if user.is_authenticated %}
+
+                                                        <a href="{% url 'update-head' organiser.id %}" style="background-color: rgb(138, 13, 13); border: none; border-radius:0;font-size: 10px; margin-bottom: 10px; margin-top: 5px;" class="btn btn-primary">Edit</a>
+                                                        <a href="{% url 'delete-head' organiser.id %}" style="background-color: rgb(138, 13, 13);  border: none; border-radius:0;font-size: 10px; margin-bottom: 10px; margin-top: 5px;" class="btn btn-primary">Delete</a>
+                                                   
+                                                    {% endif %}
+                                             
+                                             {% endfor %}
+                                             
+                                         </ul>
+
+                                         <h5 class="card-title">Convenors</h5>
+                                                {% if user.is_authenticated %}
+                                                <a href="{% url 'new-convenor' %}" style="background-color: rgb(138, 13, 13); border: none; border-radius:0;font-size: 10px; margin-bottom: 10px; margin-top: 5px;" class="btn btn-primary">Add</a>
+                                                {% endif %}
+                                         <ul>
+                                             {% for organiser in convenors %}
+                                             <li style="font-size: 85%;">
+                                                    {{organiser.name}}
+                                                </li>
+                                                    {% if user.is_authenticated %}
+
+                                                        <a href="{% url 'update-convenor' organiser.id %}" style="background-color: rgb(138, 13, 13); border: none; border-radius:0;font-size: 10px; margin-bottom: 10px; margin-top: 5px;" class="btn btn-primary">Edit</a>
+                                                        <a href="{% url 'delete-convenor' organiser.id %}" style="background-color: rgb(138, 13, 13);  border: none; border-radius:0;font-size: 10px; margin-bottom: 10px; margin-top: 5px;" class="btn btn-primary">Delete</a>
+                                                   
+                                                    {% endif %}
+                                             
+                                             {% endfor %}
+                                             
+                                         </ul>
+
+                                         <h5 class="card-title">Local Organising Committee</h5>
                                                 {% if user.is_authenticated %}
                                                 <a href="{% url 'new-organiser' %}" style="background-color: rgb(138, 13, 13); border: none; border-radius:0;font-size: 10px; margin-bottom: 10px; margin-top: 5px;" class="btn btn-primary">Add</a>
                                                 {% endif %}

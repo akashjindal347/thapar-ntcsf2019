@@ -43,6 +43,34 @@ class Speaker(models.Model):
     def __str__(self):
         return str(self.name)
 
+class ChiefPatron(models.Model):
+   
+    name = models.CharField(default = '', max_length=50)
+
+    def __str__(self):
+        return str(self.name)
+
+class Patron(models.Model):
+   
+    name = models.CharField(default = '', max_length=50)
+
+    def __str__(self):
+        return str(self.name)
+
+class Head(models.Model):
+   
+    name = models.CharField(default = '', max_length=50)
+
+    def __str__(self):
+        return str(self.name)
+
+class Convenor(models.Model):
+   
+    name = models.CharField(default = '', max_length=50)
+
+    def __str__(self):
+        return str(self.name)
+
 class Organiser(models.Model):
    
     name = models.CharField(default = '', max_length=50)
@@ -61,7 +89,7 @@ class RegistrationContact(models.Model):
 
     description = models.TextField(default = '')
     link = models.CharField(max_length = 100,default = '',null= True,blank = True)
-    highlight = models.TextField(default = '', null=True, blank = True)
+    highlight = models.TextField(default = '', null=True, blank=True)
 
     def __str__(self):
         return str(self.description)

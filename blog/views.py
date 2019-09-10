@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from .forms import PostForm
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.shortcuts import get_object_or_404
-from .models import Post, AboutTheConference, ImportantDate, CallForPaper, Speaker, Announcement, Organiser, Contact, RegistrationContact, BankDetail, RegistrationFee, AccomodationAndTravel
+from .models import Post, AboutTheConference, ImportantDate, CallForPaper, Speaker, Announcement, Organiser, Contact, RegistrationContact, BankDetail, RegistrationFee, AccomodationAndTravel,ChiefPatron,Patron,Head,Convenor
 # Create your views here.
 def PostCreateView(request):
     form = PostForm(request.POST or None)
@@ -191,6 +191,98 @@ class OrganisersCreateView(CreateView):
     def form_valid(self, form):
         return super().form_valid(form)
 
+class ChiefPatronUpdateView(UpdateView):
+    model = ChiefPatron
+    template_name = "blog/updatepost.html"
+    fields = ['name']
+    success_url = "/"
+	
+    def form_valid(self, form):
+	    return super().form_valid(form)
+
+class ChiefPatronDeleteView(DeleteView):
+	model = ChiefPatron
+	template_name = "blog/deleteview.html"
+	success_url = "/"
+
+class ChiefPatronCreateView(CreateView):
+    model = ChiefPatron
+    template_name = "blog/createpost.html"
+    fields = ['name']
+    success_url = "/"
+
+    def form_valid(self, form):
+        return super().form_valid(form)
+
+class PatronUpdateView(UpdateView):
+    model = Patron
+    template_name = "blog/updatepost.html"
+    fields = ['name']
+    success_url = "/"
+	
+    def form_valid(self, form):
+	    return super().form_valid(form)
+
+class PatronDeleteView(DeleteView):
+	model = Patron
+	template_name = "blog/deleteview.html"
+	success_url = "/"
+
+class PatronCreateView(CreateView):
+    model = Patron
+    template_name = "blog/createpost.html"
+    fields = ['name']
+    success_url = "/"
+
+    def form_valid(self, form):
+        return super().form_valid(form)
+    
+class HeadUpdateView(UpdateView):
+    model = Head
+    template_name = "blog/updatepost.html"
+    fields = ['name']
+    success_url = "/"
+	
+    def form_valid(self, form):
+	    return super().form_valid(form)
+
+class HeadDeleteView(DeleteView):
+	model = Head
+	template_name = "blog/deleteview.html"
+	success_url = "/"
+
+class HeadCreateView(CreateView):
+    model = Head
+    template_name = "blog/createpost.html"
+    fields = ['name']
+    success_url = "/"
+
+    def form_valid(self, form):
+        return super().form_valid(form)
+
+class ConvenorUpdateView(UpdateView):
+    model = Convenor
+    template_name = "blog/updatepost.html"
+    fields = ['name']
+    success_url = "/"
+	
+    def form_valid(self, form):
+	    return super().form_valid(form)
+
+class ConvenorDeleteView(DeleteView):
+	model = Convenor
+	template_name = "blog/deleteview.html"
+	success_url = "/"
+
+class ConvenorCreateView(CreateView):
+    model = Convenor
+    template_name = "blog/createpost.html"
+    fields = ['name']
+    success_url = "/"
+
+    def form_valid(self, form):
+        return super().form_valid(form)
+
 class FeesUpdateView(UpdateView):
     model = RegistrationFee
     template_name = "blog/updatepost.html"
@@ -215,7 +307,7 @@ class FeesCreateView(CreateView):
         return super().form_valid(form)
 
 def HomePage(request):
-    return render(request,'blog/index.html',{'atcs': AboutTheConference.objects.all(), 'impds': ImportantDate.objects.all(), 'cfps': CallForPaper.objects.all(), 'spkrs': Speaker.objects.all(), 'organisers': Organiser.objects.all(), 'contact': Contact.objects.all(), 'announce': Announcement.objects.all()})
+    return render(request,'blog/index.html',{'atcs': AboutTheConference.objects.all(), 'impds': ImportantDate.objects.all(), 'cfps': CallForPaper.objects.all(), 'spkrs': Speaker.objects.all(), 'organisers': Organiser.objects.all(),'chiefpatron':ChiefPatron.objects.all(),'patron':Patron.objects.all(),'heads':Head.objects.all(),'convenors':Convenor.objects.all(), 'contact': Contact.objects.all(), 'announce': Announcement.objects.all()})
 
 def RegistrationPage(request):
     return render(request,'blog/registration.html',{'reg_con': RegistrationContact.objects.all(), 'bankdetails': BankDetail.objects.all(), 'regis_fee': RegistrationFee.objects.all(), 'contact': Contact.objects.all()})
